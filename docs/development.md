@@ -14,6 +14,9 @@ pnpm install
 
 # 构建项目
 pnpm build
+
+# 运行项目
+pnpm dev
 ```
 
 然后按照 [⚙️ 参数设置](https://github.com/idootop/mi-gpt/blob/main/docs/settings.md) 教程，配置好你的 `.env` 和 `.migpt.js` 文件。
@@ -23,7 +26,7 @@ pnpm build
 有两种运行方式：VS Code Debug 或 NPM Script：
 
 - **NPM Script**: 配置好 `.env` 和 `.migpt.js` 后直接使用 `pnpm run dev` 启动 `MiGPT`。
-- **VScode Debug**：使用 VS Code 打开项目根目录，然后按 `F5` 开始调试 `MiGPT`。注意，启动前请在 `tests/migpt.ts` 文件中配置 `MiGPT` 相关参数。
+- **VScode Debug**：使用 VS Code 打开项目根目录，然后按 `F5` 开始调试 `MiGPT`。
 
 > 本项目默认在 Node 20 中运行，如果你的 Node 版本过低可能无法正常启动本项目。
 
@@ -38,7 +41,7 @@ docker build --platform linux/arm/v7 -t mi-gpt .
 运行构建后的 docker
 
 ```shell
-docker run --env-file $(pwd)/.env -v $(pwd)/.migpt.js:/app/.migpt.js mi-gpt
+docker run -d --env-file $(pwd)/.env -v $(pwd)/.migpt.js:/app/.migpt.js mi-gpt
 ```
 
 ## 常见问题
@@ -61,3 +64,7 @@ pnpm run db:reset
 ### 提示初始化 Mi Service 失败
 
 请检查你的小米 ID 和密码配置是否正确和生效，可在 VS Code 中下断点调试。
+
+### 提示初始化 db 失败
+
+请检查你的项目路径中是否包含中文或空格，应当只包含英文字母、数字和下划线（_）

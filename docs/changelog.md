@@ -1,5 +1,82 @@
 # ✨ 更新日志
 
+## v4.1.0
+
+### 🐛 修复
+
+- ✅ 修复部分机型连续对话异常的问题（比如小爱音箱 Play）
+- ✅ 修复第三方 TTS 发音人为 undefined 的问题
+- ✅ 修复默认网络超时时间过短的问题，上调为 5s
+
+### 💪 优化
+
+- ✅ 允许通过设置 systemTemplate 为空字符串来关闭系统消息
+- ✅ 优化关闭流式响应时不能使用连续对话模式的提示语
+- ✅ 优化 bot 个人简介默认模板
+
+### 📚 文档
+
+- ✅ 新增官方[视频教程](https://www.bilibili.com/video/BV1zb421H7cS)和配套 [PPT](https://github.com/idootop/mi-gpt/blob/main/assets/pdf/MiGPT%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B.pdf)
+- ✅ 添加召唤 AI 回答问题的唤醒指令的说明
+- ✅ 添加如何提高 AI 回答反应速度的配置教程
+- ✅ 添加连续对话下和小爱音箱说话没有反应的说明
+- ✅ 添加如何快速打断 AI 的回答的说明
+- ✅ 添加 server 端异地登录失败，使用本地登录凭证的教程
+- ✅ 添加 TTS 和 OpenAI baseURL 示例和注意事项
+- ✅ 添加如何关闭系统 Prompt 和对话上下文的说明
+- ✅ 添加系统 Prompt 字符串变量的示例
+- ✅ 添加 timeout 参数说明
+
+### ❤️ 感谢
+
+- @lmk123 正在为 MiGPT 制作 [GUI](https://github.com/idootop/mi-gpt/issues/111) 和启动 [CLI](https://github.com/lmk123/migpt-cli)，方便普通用户更简单的使用 MiGPT。
+- @mingtian886 提供了小爱音箱 Play 硬件，协助调试连续对话异常的问题
+- 以及 @uect 和 @miaowmint 等在微信交流群内帮助群友积极解答问题的可爱的人们 ❤️
+
+## v4.0.0
+
+### ✨ 新功能
+
+- ✅ 新增自定义系统 Prompt 功能
+- ✅ 支持火山引擎 TTS 和音色切换能力
+- ✅ 支持使用 SOCKS 代理 by [@tluo-github](https://github.com/idootop/mi-gpt/pull/100)
+- ✅ 添加 MIT license
+
+### 💪 优化
+
+- ✅ 登录凭证过期后自动刷新 token https://github.com/idootop/mi-gpt/issues/76
+- ✅ 优化网络请求错误重试策略（消息/播放状态轮询）
+- ✅ 优化 db 路径查找方式与初始化脚本
+- ✅ 移除 TTS 不发音字符（emoji）
+- ✅ 优化切换音色默认语音指令
+
+### 📚 文档
+
+- ✅ 添加系统 Prompt 模板字符串变量的说明
+  - ✅ DAN 模式，猫娘等整活 prompt 的演示示例
+  - ✅ Awesome prompt 征集
+- ✅ 添加更新人设 Prompt 的使用说明（你是 xxx，你喜欢 xxx）
+- ✅ 添加对其他品牌音箱的支持情况的说明 https://github.com/idootop/mi-gpt/issues/83
+- ✅ 添加“小爱同学”唤醒词的相关说明 https://github.com/idootop/mi-gpt/issues/84
+- ✅ 添加进入唤醒模式时小爱莫名开始播放歌曲的说明 https://github.com/idootop/mi-gpt/issues/71
+- ✅ 添加部署和接入本地大语言模型的教程 https://github.com/idootop/mi-gpt/issues/82
+- ✅ 添加获取小爱音箱 did 的相关说明
+- ✅ 添加提示无法找到共享设备的相关说明
+- ✅ 添加常见小爱音箱型号的支持情况和参数列表
+- ✅ 添加 OpenAI 账号充值前可能无法使用 gpt-4 系列模型的相关说明
+- ✅ 添加无需和小爱音箱在同一局域网下运行的说明
+- ✅ 添加自定义 TTS 和音色的配置和使用教程
+- ✅ 添加切换音色使用教程
+
+### ❤️ 感谢
+
+- @tluo-github 添加了对 SOCKS 代理的支持 https://github.com/idootop/mi-gpt/pull/100
+- @shinedlc 实现了一个小爱音箱接入 [OpenGlass](https://github.com/BasedHardware/OpenGlass) 摄像头硬件 + 本机搭建 [Ollama](https://github.com/ollama/ollama) 模型的 [Fork](https://github.com/shinedlc/mi-gpt)
+- @LycsHub 推荐了 [simple-one-api](https://github.com/fruitbars/simple-one-api) 将其他模型的接口统一成 OpenAI 的格式，支持 Coze
+- @lmk123 推荐了国内 docker 镜像设置与大模型服务申请配置教程
+- @laiquziru 协助调试小米 AI 音箱（第二代）
+- @wt666666、@mingtian886、@imlinhanchao、@HJ66 帮助网友解答常见问题（比如通义千问如何配置等）
+
 ## v3.1.0
 
 ### 🔥 Hotfix
